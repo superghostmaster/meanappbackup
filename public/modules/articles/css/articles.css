@@ -1,0 +1,51 @@
+body {
+  background:#d9e7f4
+}
+
+.maincontrols {
+  height:200px;
+  width:300px;
+  margin: 20px 20px;
+  padding:0px;
+}
+
+#usercontrol {
+  border-radius:4px;
+}
+
+#usercontrol>a {
+  height:50%;
+  background-image:none;
+  background-color:#fcf8e3;
+  font-size:3em;
+  color:#777
+}
+
+#usercontrol>a>p {
+  font-size:.5em
+}
+
+#usercontrol>a:hover {
+  background-color:#f6e9a7;
+  color:#000
+}
+.maincontrols-div {
+  background-color:rgba(0,0,0,.2);
+  padding-top:30px;
+  padding-bottom:30px;
+  height:100%;
+  border-radius:8px
+}
+
+.maincontrols-jumbo {
+  background-color:#5bc0de;
+  padding:30px 20px;
+  height:100%
+}
+
+.createcontrols-div {
+  background-color:rgba(0,0,0,.05);
+  padding-top:30px;
+  padding-bottom:30px;
+  height:100%
+}

@@ -1,3 +1,4 @@
+<section class="container">
 <section data-ng-controller="ArticlesController" data-ng-init="findOne()">
 	<div class="page-header">
 		<h1 data-ng-bind="article.title"></h1>
@@ -20,5 +21,9 @@
     
 	</small>
 	<p class="lead" data-ng-bind="article.content"></p>
-  
+  <span class="text-center label label-warning glyphicon glyphicon-tag"> {{article.keywords}}</span>
+  <span class="text-center label label-warning glyphicon glyphicon-tag"> {{article.keywordstwo}}</span>
+  <span class="text-center label label-warning glyphicon glyphicon-tag"> {{article.keywordsthree}}</span>
+          
+</section>
 </section>

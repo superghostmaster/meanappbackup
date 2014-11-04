@@ -3,20 +3,14 @@
 angular.module('articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Articles',
 	function($scope, $stateParams, $location, Authentication, Articles) {
 		$scope.authentication = Authentication;
-    /*$scope.keywords = [
-          {word:'wordpress'},
-          {word:'cpanel'},
-          {word:'hosting'},
-          {word:'domain'}
-        ];*/
-    
-		
     $scope.create = function() {
       var article = new Articles({
 				title: this.title,
 				content: this.content,
-        keywords: this.keywords
-        /*votes: this.votes*/
+        keywords: this.keywords,
+        keywordstwo: this.keywordstwo,
+        keywordsthree: this.keywordsthree
+        
         
       });
 			
@@ -25,6 +19,8 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
         $scope.title = '';
 				$scope.content = '';
         $scope.keywords = '';
+        $scope.keywordstwo = '';
+        $scope.keywordsthree = '';
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});

@@ -1,32 +1,97 @@
+<section class="container">
 <section data-ng-controller="ArticlesController">
 	<div class="page-header">
-		<h1>New Consulting Question Post</h1>
+		<h1 class="text-center">New Consulting Question Post</h1>
 	</div>
-	<div class="col-md-12 jumbotron">
+	<div class="col-md-12 jumbotron createcontrols-div">
 		<form name="articleForm" class="form-horizontal" data-ng-submit="create()" novalidate>
 			<fieldset>
-				<div class="form-group" ng-class="{ 'has-error': articleForm.title.$dirty && articleForm.title.$invalid }">
+				
+        <div class="form-group" ng-class="{ 'has-error': articleForm.title.$dirty && articleForm.title.$invalid }">
 					<label class="control-label" for="title">Consulting Question (title)</label>
 					<div class="controls">
-						<input name="title" type="text" data-ng-model="title" id="title" class="form-control" placeholder="Enter your consulting question here" required>
+						<input class="form-control" name="title" type="text" data-ng-model="title" id="title" placeholder="Enter your consulting question here" required>
 					</div>
 				</div>
-				<div class="form-group">
+				
+        <div class="form-group">
 					<label class="control-label" for="content">Description</label>
 					<div class="controls">
-						<textarea name="content" data-ng-model="content" id="content" class="form-control" cols="30" rows="10" placeholder="Describe the question in detail here"></textarea>
+						<textarea class="form-control" name="content" data-ng-model="content" id="content" cols="10" rows="5" wrap="hard" maxlength="800" placeholder="Describe the question in detail here" required></textarea>
 					</div>
 				</div>
-        <div class="form-group">
-          <select  data-ng-model="keywords">
-            <option value="">--select a keyword--</option>
-            <option id="wordpress"  data-ng-model="keywords">Wordpress</option>
-            <option id="cpanel"  data-ng-model="keywords">cPanel</option>
-            <option id="ssl"  data-ng-model="keywords">SSL</option>
+        
+        <div class="form-group container">
+          <label class="control-label" for="keywords">Keywords: </label>
+          <select id="keywords" data-ng-model="keywords" required>
+            <option selected="selected" disabled="disabled" value=""> Select A Keyword </option>
+            <optgroup label="Hosting">
+              <option value="Wordpress">Wordpress</option>
+              <option value="cPanel">cPanel</option>
+              <option value="Plesk">Plesk</option>
+              <option value="4GH/2GH">4GH/2GH</option>
+              <option value="VPS">VPS</option>
+              <option value="Dedicated Server">Dedicated Server</option>
+            </optgroup>
+            <optgroup label="Marketing">
+              <option value="Get Found">Get Found</option>
+              <option value="Get Paid">Get Paid</option>
+              <option value="Email Marketing">Email Marketing</option>
+              <option value="Search Engine Visibility">Search Engine Visibility</option>
+            </optgroup>
+            <optgroup label="SSL">
+                <option value="Standard SSL">Standard SSL</option>
+              <option value="UCC">UCC</option>
+              <option value="Wildcard">Wildcard</option>
+            </optgroup>
+          </select>
+          <select id="keywordstwo" data-ng-model="keywordstwo" required>
+            <option selected="selected" disabled="disabled" value=""> Select A Keyword </option>
+            <optgroup label="Hosting">
+              <option value="Wordpress">Wordpress</option>
+              <option value="cPanel">cPanel</option>
+              <option value="Plesk">Plesk</option>
+              <option value="4GH/2GH">4GH/2GH</option>
+              <option value="VPS">VPS</option>
+              <option value="Server">Server</option>
+            </optgroup>
+            <optgroup label="Marketing">
+              <option value="Get Found">Get Found</option>
+              <option value="Get Paid">Get Paid</option>
+              <option value="Email Marketing">Email Marketing</option>
+              <option value="Search Engine Visibility">Search Engine Visibility</option>
+            </optgroup>
+            <optgroup label="SSL">
+              <option value="Standard SSL">Standard SSL</option>
+              <option value="UCC">UCC</option>
+              <option value="Wildcard">Wildcard</option>
+            </optgroup>
+          </select>
+          <select id="keywordsthree" data-ng-model="keywordsthree" required>
+            <option selected="selected" disabled="disabled" value=""> Select A Keyword </option>
+            <optgroup label="Hosting">
+              <option value="Wordpress">Wordpress</option>
+              <option value="cPanel">cPanel</option>
+              <option value="Plesk">Plesk</option>
+              <option value="4GH/2GH">4GH/2GH</option>
+              <option value="VPS">VPS</option>
+              <option value="Server">Server</option>
+            </optgroup>
+            <optgroup label="Marketing">
+              <option value="Get Found">Get Found</option>
+              <option value="Get Paid">Get Paid</option>
+              <option value="Email Marketing">Email Marketing</option>
+              <option value="Search Engine Visibility">Search Engine Visibility</option>
+            </optgroup>
+            <optgroup label="SSL">
+              <option value="Standard SSL">Standard SSL</option>
+              <option value="UCC">UCC</option>
+              <option value="Wildcard">Wildcard</option>
+            </optgroup>
           </select>
         </div>
-         	<div class="form-group">
-          <button type="submit" class="btn btn-default">Post</button>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default btn-lg">Post</button>
 				</div>
 				<div data-ng-show="error" class="text-danger">
 					<strong data-ng-bind="error"></strong>
@@ -35,3 +100,18 @@
 		</form>
 	</div>
 </section>
+</section>
+<script>
+$(document).ready(function(){
+$('#content').maxlength({
+  placement:'top',
+  threshold: 600,
+  warningClass: "label label-success",
+  limitReachedClass: "label label-danger",
+  separator: ' of ',
+  preText: 'You have ',
+  postText: ' chars remaining.',
+  validate: true
+});           
+});
+</script>

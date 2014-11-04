@@ -23,16 +23,30 @@ var ArticleSchema = new Schema({
 	content: {
 		type: String,
 		default: '',
-		trim: true
+		trim: true,
+    required: 'Content can not be blank. Be more creative.'
 	},
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'
 	},
   
-  keywords:{
+  keywords: {
     type: String,
-    default:'this is a keyword'
+    default:'',
+    required: 'Select your keywords to continue.'
+  },
+  
+  keywordstwo: {
+    type: String,
+    default:'',
+    
+  },
+  
+  keywordsthree: {
+    type: String,
+    default:'',
+    
   }
   
 });

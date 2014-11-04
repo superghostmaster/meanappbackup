@@ -31,7 +31,7 @@ describe('Article Model Unit Tests:', function() {
 			article = new Article({
 				title: 'Article Title',
 				content: 'Article Content',
-				user: user
+        user: user
 			});
 
 			done();
@@ -55,6 +55,7 @@ describe('Article Model Unit Tests:', function() {
 			});
 		});
 	});
+  
 
 	afterEach(function(done) {
 		Article.remove().exec();
