@@ -16,7 +16,8 @@ module.exports = {
 			css: [
 				'public/lib/bootstrap/dist/css/bootstrap.css',
 				'public/lib/bootstrap/dist/css/bootstrap-theme.css',
-        'public/lib/modules/core/css/header.css'
+        'public/lib/modules/core/css/header.css',
+        'public/lib/modules/articles/css/articles.css'
 			],
 			js: [
         'public/lib/jquery/dist/jquery.min.js',

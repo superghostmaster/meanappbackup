@@ -1,7 +1,7 @@
 <section class = "container">
 <section data-ng-controller="ArticlesController" data-ng-init="find()">
 	<div class="page-header">
-		<h1>Consulting Questions</h1>
+		<h2 class="articletitle">Consulting Questions</h2>
 	</div>
 	<div class="form-group" data-ng-repeat="article in articles | orderBy:'-date'">
     <div> 
@@ -15,10 +15,16 @@
           </div>
         </a>
         <div class="panel-footer">
-          <span class="text-center label label-info glyphicon glyphicon-tag"> {{article.keywords}}</span>
-          <span class="text-center label label-warning glyphicon glyphicon-tag"> {{article.keywordstwo}}</span>
-          <span class="text-center label label-danger glyphicon glyphicon-tag"> {{article.keywordsthree}}</span>
-          <div class="pull-right">
+          <div class="text-center label label-info">
+            <span><span class="glyphicon glyphicon-tag"></span>   {{article.keywords}}  </span>
+          </div>
+          <div class="text-center label label-warning">
+            <span><span class="glyphicon glyphicon-tag"></span>   {{article.keywordstwo}}  </span>
+          </div>
+          <div class="text-center label label-danger">
+            <span><span class="glyphicon glyphicon-tag"></span>   {{article.keywordsthree}}</span>
+          </div>
+          <div class="pull-right text-info">
             Posted on {{article.created | date:'mediumDate'}} by {{article.user.displayName}}
           </div>
         </div>

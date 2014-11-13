@@ -3,13 +3,32 @@
    <nav>
     <ul class="nav navbar-nav">
       <li ui-route="/" ng-class="{active: ($uiRoute)}" >
-        <a href="/#!/" class="navbar-brand glyphicon glyphicon-leaf"> ConsultApp</a>  
+        <a href="/#!/">
+          <span class="glyphicon glyphicon-leaf"></span> 
+          <span class="brand">  ConsultApp</span>
+        </a>  
+      </li>
+      <li>
+        <span class="divider">
+            |
+        </span>
       </li>
       <li ui-route="/articles" ng-class="{active: ($uiRoute)}">
-        <a class="glyphicon glyphicon-list headerfonts" href="/#!/articles" data-toggle="tooltip" data-placement="bottom" title="List All Consulting Questions">  List</a>
+        <a href="/#!/articles" data-toggle="tooltip" data-placement="bottom" title="List All Consulting Questions">
+          <span class="glyphicon glyphicon-list headerfonts" ></span>
+          <span>  List</span>
+        </a>
+      </li>
+      <li>
+        <span class="divider">
+            |
+        </span>
       </li>
       <li ui-route="/articles/create" ng-class="{active: ($uiRoute)}">
-        <a class="glyphicon glyphicon-comment headerfonts" href="/#!/articles/create" data-toggle="tooltip" data-placement="bottom" title="Create New Consulting Question">  Create</a>
+        <a href="/#!/articles/create" data-toggle="tooltip" data-placement="bottom" title="Create New Consulting Question">
+          <span class="glyphicon glyphicon-pencil headerfonts" ></span>
+          <span>  Create</span>
+        </a>
       </li>
     </ul>
 		

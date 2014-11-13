@@ -1,29 +1,40 @@
 <section class="container">
-<section data-ng-controller="ArticlesController" data-ng-init="findOne()">
-	<div class="page-header">
-		<h1 data-ng-bind="article.title"></h1>
-	</div>
-	<div class="pull-right" data-ng-show="authentication.user._id == article.user._id">
-		<a class="btn btn-primary" href="/#!/articles/{{article._id}}/edit">
-			<i class="glyphicon glyphicon-edit"></i>
-		</a>
-		<a class="btn btn-primary" data-ng-click="remove();">
-			<i class="glyphicon glyphicon-trash"></i>
-		</a>
-	</div>
-	<small>
-		<em class="text-muted">
-			Posted on
-			<span data-ng-bind="article.created | date:'mediumDate'"></span>
-			by
-			<span data-ng-bind="article.user.displayName"></span>
-		</em>
-    
-	</small>
-	<p class="lead" data-ng-bind="article.content"></p>
-  <span class="text-center label label-warning glyphicon glyphicon-tag"> {{article.keywords}}</span>
-  <span class="text-center label label-warning glyphicon glyphicon-tag"> {{article.keywordstwo}}</span>
-  <span class="text-center label label-warning glyphicon glyphicon-tag"> {{article.keywordsthree}}</span>
-          
-</section>
+  <section data-ng-controller="ArticlesController" data-ng-init="findOne()">
+	  <div>
+      <div class="page-header">
+        <h2 data-ng-bind="article.title" class="articletitle"></h2>
+      </div>
+      <div class="pull-right editbuttons" data-ng-show="authentication.user._id == article.user._id">
+        <a class="btn btn-warning btn-sm" id="editbtn" href="/#!/articles/{{article._id}}/edit">
+          <span><span class="glyphicon glyphicon-edit"></span>  Edit</span>
+        </a>
+        <a class="btn btn-danger btn-sm" id="trashbtn" data-ng-click="remove();">
+          <span><span class="glyphicon glyphicon-trash"></span>  Trash</span>
+        </a>
+      </div>
+      <span class="label label-primary postdetails">
+        <em>
+          Posted on
+          <span data-ng-bind="article.created | date:'mediumDate'"></span>
+          by
+          <span data-ng-bind="article.user.displayName"></span>
+        </em>
+      </span>
+    </div>
+   
+    <div class="well well-lg contentwell">
+      <p class="lead" data-ng-bind="article.content"></p>
+    </div>
+    <div class="posttags">
+      <div class="text-center label label-info">
+        <span><span class="glyphicon glyphicon-tag"></span>  {{article.keywords}}  </span>
+      </div>
+      <div class="text-center label label-warning">
+        <span><span class="glyphicon glyphicon-tag"></span>  {{article.keywordstwo}}  </span>
+      </div>
+      <div class="text-center label label-danger">
+        <span><span class="glyphicon glyphicon-tag"></span>  {{article.keywordsthree}}  </span>
+      </div>  
+    </div>
+  </section>
 </section>
